@@ -5,34 +5,34 @@ import org.junit.jupiter.api.Test;
 
 public class EscapeTest {
 
-    @Test
-    public void testUnicode() {
-        String pattern = "foo\\u0010bar";
+	@Test
+	public void testUnicode() {
+		String pattern = "foo\\u0010bar";
 
-        MatchingEngine matchingEngine = GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES);
-        assert (matchingEngine.matches("foo\u0010bar"));
+		MatchingEngine matchingEngine = GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES);
+		assert (matchingEngine.matches("foo\u0010bar"));
 
-    }
+	}
 
-    @Test
-    public void testBadUnicode() {
-        String pattern = "foo\\u001zbar";
+	@Test
+	public void testBadUnicode() {
+		String pattern = "foo\\u001zbar";
 
-        Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
-    }
+		Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
+	}
 
-    @Test
-    public void testBadUnicodeAtEnd() {
-        String pattern = "foo\\u001";
+	@Test
+	public void testBadUnicodeAtEnd() {
+		String pattern = "foo\\u001";
 
-        Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
-    }
+		Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
+	}
 
-    @Test
-    public void testBadEscape() {
-        String pattern = "foo\\e";
+	@Test
+	public void testBadEscape() {
+		String pattern = "foo\\e";
 
-        Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
-    }
+		Assertions.assertThrows(RuntimeException.class, () -> GlobPattern.compile(pattern, '%', '_', GlobPattern.CASE_INSENSITIVE | GlobPattern.HANDLE_ESCAPES));
+	}
 
 }

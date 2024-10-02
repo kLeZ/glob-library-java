@@ -8,28 +8,28 @@ package com.hrakaroo.glob;
 public interface MatchingEngine {
 
 
-    /**
-     * Ask if the compiled glob pattern matches the given string.
-     *
-     * @param string The input string we are checking.
-     * @return {@code true} if the string patches the glob pattern, {@code false} otherwise.
-     */
-    boolean matches(String string);
+	/**
+	 * Ask if the compiled glob pattern matches the given string.
+	 *
+	 * @param string The input string we are checking.
+	 * @return {@code true} if the string patches the glob pattern, {@code false} otherwise.
+	 */
+	boolean matches(String string);
 
 
-    /**
-     * Estimate the size of running the matches method in bytes.  This size will include the static size of
-     * the matcher from {@link #staticSizeInBytes()}.
-     *
-     * @return Estimated memory usage in bytes.
-     */
-    int matchingSizeInBytes();
+	/**
+	 * Estimate the size of running the matches method in bytes. This size will include the static size of
+	 * the matcher from {@link #staticSizeInBytes()}.
+	 *
+	 * @return Estimated memory usage in bytes.
+	 */
+	int matchingSizeInBytes();
 
 
-    /**
-     * Get the static size of the matcher in bytes.
-     *
-     * @return Static size of the matcher in bytes.
-     */
-    int staticSizeInBytes();
+	/**
+	 * Get the static size of the matcher in bytes.
+	 *
+	 * @return Static size of the matcher in bytes.
+	 */
+	int staticSizeInBytes();
 }

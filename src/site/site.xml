@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project>
+	<skin>
+		<groupId>io.github.stevecrox.maven.skins</groupId>
+		<artifactId>bootstrap-site-skin</artifactId>
+		<version>${bootstrap-site-skin.version}</version>
+	</skin>
+	<custom>
+		<bootstrapSkin>
+			<bootswatchStyle>cyborg</bootswatchStyle>
+			<navbar>
+				<enabled>true</enabled>
+			</navbar>
+			<projectbar>
+				<menuOrientation>right</menuOrientation>
+			</projectbar>
+			<gitHub>
+				<organisation>kLeZ</organisation>
+				<repository>glob-library-java</repository>
+			</gitHub>
+		</bootstrapSkin>
+	</custom>
+	<body>
+		<menu name="Documentazione">
+			<item name="README" href="README.html"/>
+		</menu>
+		<menu ref="reports"/>
+	</body>
+</project>

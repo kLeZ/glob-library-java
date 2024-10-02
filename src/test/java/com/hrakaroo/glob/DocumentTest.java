@@ -7,21 +7,21 @@ import org.junit.jupiter.api.Test;
  */
 public class DocumentTest {
 
-    @Test
-    public void example1() {
-        MatchingEngine m = GlobPattern.compile("dog*cat\\*goat??");
+	@Test
+	public void example1() {
+		MatchingEngine m = GlobPattern.compile("dog*cat\\*goat??");
 
-        assert (m.matches("dog horse cat*goat!~"));
-        assert (m.matches("dogcat*goat.."));
-        assert (!m.matches("dog catgoat!/"));
-    }
+		assert (m.matches("dog horse cat*goat!~"));
+		assert (m.matches("dogcat*goat.."));
+		assert (!m.matches("dog catgoat!/"));
+	}
 
-    @Test
-    public void example2() {
-        MatchingEngine m = GlobPattern.compile("dog%cat\\%goat__", '%', '_', GlobPattern.HANDLE_ESCAPES);
+	@Test
+	public void example2() {
+		MatchingEngine m = GlobPattern.compile("dog%cat\\%goat__", '%', '_', GlobPattern.HANDLE_ESCAPES);
 
-        assert (m.matches("dog horse cat%goat!~"));
-        assert (m.matches("dogcat%goat.."));
-        assert (!m.matches("dog catgoat!/"));
-    }
+		assert (m.matches("dog horse cat%goat!~"));
+		assert (m.matches("dogcat%goat.."));
+		assert (!m.matches("dog catgoat!/"));
+	}
 }
